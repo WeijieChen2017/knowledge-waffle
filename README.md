@@ -1,7 +1,8 @@
 # knowledge-waffle
 
 Simple local manager for academic manuscripts. Entries are stored in a JSON file
-and can be added, edited, deleted and filtered.
+and can be added, edited, deleted and filtered via a graphical interface.
+
 
 ## Installation
 
@@ -14,43 +15,21 @@ pip install pytest
 
 ## Usage
 
-Generate the JSON prompt for obtaining `methods`, `datasets` and `metrics`
-information from ChatGPT:
+Run the GUI:
 
 ```bash
-python app.py prompt
+python app.py
 ```
 
-Add a manuscript (details are optional JSON from the prompt output):
+The interface shows all stored manuscripts and buttons to **Add**, **Edit** or
+**Delete** entries. "Fields" displays all unique models, datasets and metrics
+across the database. "Filter" allows filtering entries by model, dataset or
+metric and shows the resulting list. "Prompt" opens a window containing the JSON
+prompt to collect `methods`, `datasets` and `metrics` information from ChatGPT.
 
-```bash
-python app.py add --title "My Paper" --authors "Alice,Bob" \
-  --affiliations "Uni A,Uni B" --abstract "Short" --details details.json
-```
-
-Edit or delete entries by index:
-
-```bash
-python app.py edit 0 --title "Updated Title"
-python app.py delete 0
-```
-
-List entries or available models/datasets/metrics:
-
-```bash
-python app.py list
-python app.py fields
-```
-
-Filter entries:
-
-```bash
-python app.py filter --model MODEL_NAME
-python app.py filter --dataset DATASET_NAME
-python app.py filter --metric METRIC_NAME
-```
-
-The generated prompt asks ChatGPT to return JSON with the following structure:
+The prompt asks ChatGPT to return JSON with the following structure, which can
+be pasted directly into the corresponding fields when adding or editing an
+entry:
 
 ```json
 {
@@ -81,6 +60,5 @@ The generated prompt asks ChatGPT to return JSON with the following structure:
   }
 }
 ```
-
-The JSON returned by ChatGPT can be saved to a file and supplied to `--details`
-when adding or editing an entry.
+The JSON returned by ChatGPT can be pasted into the corresponding text boxes in
+the GUI when adding or editing an entry.
