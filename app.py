@@ -248,4 +248,3 @@ def main() -> None:  # pragma: no cover - GUI launch
 
 if __name__ == "__main__":  # pragma: no cover - GUI launch
     main()
-

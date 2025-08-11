@@ -3,6 +3,7 @@
 Simple local manager for academic manuscripts. Entries are stored in a JSON file
 and can be added, edited, deleted and filtered via a graphical interface.
 
+
 ## Installation
 
 The app uses the Python standard library. To run the tests you will need
@@ -59,6 +60,5 @@ entry:
   }
 }
 ```
-
 The JSON returned by ChatGPT can be pasted into the corresponding text boxes in
 the GUI when adding or editing an entry.
